@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>password validation</title>
+    <style>
+        body{
+            background-color: #628E90;
+            color: white;
+            font-family: sans-serif;
+            text-align: center;
+        }
+        .head{
+            font-size: 3em;
+            font-family: monospace;
+        }
+        input{
+            padding-left: 15px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            padding: 10px;
+            border: 0px solid rgb(0, 0, 0);
+            outline: none;
+            border-radius: 5px;
+            font-size: larger;
+        }
+        input[type=submit]{
+            background-color: black;
+            color: white;
+        }
+        input[type=submit]:hover{
+            scale: 1.2;
+        }
+        #answr{
+            color: red;
+            font-family:monospace;
+            font-size: large;
+        }
+    </style>
+</head>
+<body><br>
+    <div class="head">Password Validation</div><br><br><br><br><br><br>
+    <div class="container">
+        <input type="password" id="pswrd1"/>&nbsp;&nbsp;
+        <input type="password" id="pswrd2"/>&nbsp;&nbsp;
+        <input type="submit" onclick="validate()"/> 
+    </div><br>
+    <div id="answr"></div>
+</body>
+<script>
+    function validate()
+    {
+        var first = document.getElementById('pswrd1').value;
+        var second = document.getElementById('pswrd2').value;
+        var result;
+        if(first==second)
+        {
+            if(first.length>=8)
+            {
+                result="success";
+                document.getElementById('answr').innerHTML=result;
+            }
+            else
+            {
+                result="Password must be 8 character";
+                document.getElementById('answr').innerHTML=result;
+            }
+        }
+        else
+        {
+            result="password must be same";
+            document.getElementById('answr').innerHTML=result;
+        }
+    }
+</script>
+</html>

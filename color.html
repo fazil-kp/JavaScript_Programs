@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Change</title>
+    <style>
+        body{
+            background-color: #5DA7DB;
+            color: aliceblue;
+            font-size: xx-large;
+            font-family: sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        input{
+            border: 0px solid #ffffff;
+            font-size:larger
+        }
+    </style>
+</head>
+<body>
+    Enter Your Name :&nbsp;&nbsp; <input type="text" id="txtbox" onfocus="change(0)" onblur="change(1)">
+    <script>
+        function change(i){
+            if(i==0){
+                document.getElementById("txtbox").style.backgroundColor="#D8D8D8";
+                document.getElementById("txtbox").style.color="#5DA7DB";
+            }
+            else
+            {
+                document.getElementById("txtbox").style.backgroundColor="#6eacd8";
+                document.getElementById("txtbox").style.color="black";
+                var x = document.getElementById("txtbox");
+                x.value = x.value.toUpperCase();
+            }
+        }
+    </script>
+</body>
+</html>

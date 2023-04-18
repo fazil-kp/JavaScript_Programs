@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sum of elements</title>
+    <style>
+         body{
+            background-color: #3E6D9C;
+            color: white;
+            font-family: sans-serif;
+            text-align: center;
+        }
+        .head{
+            font-size: 3em;
+            font-family: monospace;
+        }
+        input{
+            padding-left: 15px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            padding: 10px;
+            border: 0px solid rgb(0, 0, 0);
+            outline: none;
+            border-radius: 5px;
+            font-size: larger;
+            background-color: white;
+        }
+        input[type=submit]{
+            background-color: black;
+            color: white;
+        }
+        input[type=submit]:hover{
+            scale: 1.2;
+        }
+    </style>
+</head>
+<body>
+    <div class="head">Sum of elements</div><br><br><br><br><br>
+    <div class="container">
+        <input type="submit" value="click here" onclick="sum()"/>
+    </div><br><br><br>
+    <input type="text" id="result" disabled>
+</body>
+<script>
+    function sum()
+    {
+        var array = new Array();
+        let sum=0;
+        let limit=parseInt(prompt("Enter the limit"));
+        for(i=0;i<limit;i++)
+        {
+            array[i]=prompt("enter the number");
+            sum=sum+parseInt(array[i]);
+        }
+        document.getElementById('result').value="sum = " +sum;
+    }
+</script>
+</html>

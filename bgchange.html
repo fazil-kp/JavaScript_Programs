@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backround color change</title>
+    <style>
+        body{
+            font-family: sans-serif;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            background-color: beige;
+        }
+        button{
+            color: aliceblue;
+            background-color: black;
+            border-radius: 12px 0 12px 0;
+            padding: 15px;
+            font-size: 3em;
+            font-weight: bolder;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="change()" title="Click Here to change backround colour" id="btn">Click Here</button>
+</body>
+<script>
+     var i=0;
+    function change(){
+        const color=['#FF8DC7','#FF7D7D','#5DA7DB','#7978FF','#BCCEF8','#5F9DF7','#D58BDD','#FF884B','#FFD6EC','#5C2E7E','#E8DFCA','#FFE3E1','#B1B2FF','#8BBCCC','#AAC4FF','#D6CDA4','#A5F1E9','#CFD2CF','#90B77D','#319DA0'];
+        const btn =['#F7ECDE','#F675A8'];
+        const txt =['#224B0C','#554994'];
+        document.body.style.backgroundColor=color[i];
+        i = i+1;
+        if (i==20 ){
+            i=0;
+        }
+    }
+    
+</script>
+</html>

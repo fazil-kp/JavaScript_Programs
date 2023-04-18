@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            height: 100vh;
+            width: 100%;
+            background-color: #438dce;
+            font-family: sans-serif;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        button{
+            background-color: #300b0b;
+            border: hidden;
+            padding: 15px;
+            border-radius: 7px;
+            font-size: larger;
+            font-weight: bold;
+            color: rgb(255, 255, 255);
+            margin-top: 25px;
+            border: 0px solid rgb(131, 11, 11);
+        }
+        .item{
+            background-color: #300b0b;
+            border: hidden;
+            padding: 15px;
+            border-radius: 7px;
+            font-size: larger;
+            font-weight: bold;
+            color: rgb(255, 255, 255);
+            margin-top: 25px;
+            border: 0px solid rgb(131, 11, 11);
+            width: 250px;
+            height: 25px;
+        }
+        button:hover{
+            background-color: #fffcf8;
+            color: #000000;
+            scale: 1.3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="first"><button onclick="triangle()">Click here</button></div>
+        <div class="item" id="status"></div>
+        <div class="item" id="area"></div>
+    </div>
+   <script>
+    function triangle()
+    {
+        let st = "Enter number";
+        let a = parseInt(prompt("Please enter FIRST side of a triangle")) ;
+        let b = parseInt(prompt("Please enter SECOND side of a triangle")) ;
+        let c = parseInt(prompt("Please enter THIRD side of a triangle")) ;
+        
+        if(a<=0 || b<=0 || c<=0)
+	{
+        st = "Not a triangle";
+		document.getElementById("status").innerHTML = st;
+    	}
+	else if(a+b <c || a+c<b || b+c<a ||isNaN(a,b,c))
+	{
+        st ="Invalid input";
+		document.getElementById("status").innerHTML = st;
+    	}
+	else
+	{
+		if(a==b && a==c) 
+		{
+            st="Eqilateral Triangle";
+			document.getElementById("status").innerHTML = st;
+		}
+		else if (a==b || a==c || b==c)
+		{
+            st= "Iscocless Triangle";
+			document.getElementById("status").innerHTML = st;
+		}
+		else
+		{
+            st = "scalena Triangle";
+			document.getElementById("status").innerHTML =st ;
+		}
+		let s =(a+b+c)/2;
+		let area= Math.sqrt(s*(s-a)*(s-b)*(s-c));
+        if(isNaN(area))
+        {
+            area=0;
+        }
+        st= "Area =" + area;
+		document.getElementById("area").innerHTML =st
+		
+	}    
+    }
+   </script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email validation</title>
+    <style>
+        body{
+            background-color: #9ED5C5;
+            font-family: sans-serif;
+            text-align: center;
+        }
+        .head{
+            font-size: 3em;
+            font-family: monospace;
+            font-weight: 900;
+        }
+        input{
+            padding-left: 15px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            padding: 10px;
+            border: 0px solid rgb(0, 0, 0);
+            outline: none;
+            border-radius: 10px;
+        }
+        button{
+            padding: 10px;
+            border: 0px solid white;
+            outline: none;
+            background-color: black;
+            color: white;
+        }
+        #reslt{
+            color: red;
+            font-size: small;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="head">E-mail validation</div><br><br><br><br><br><br><br>
+    <div class="cntainer">
+        E-mail : <input type="text" id="result" placeholder="eg:-example@gmail.com"/>&nbsp;&nbsp;
+        <button onclick="validate()">Submit</button>
+    </div><br>
+    <div id="reslt"></div>
+</body>
+<script>
+    function validate(){
+        var email=document.getElementById("result").value;
+        var at=0,dot=0;
+        var loc_at,loc_dot;
+        var cmnt;
+        for(i=0;i<=email.length;i++)
+        {
+            if(email[i]=='@')
+            {
+                at=1;
+                loc_at=i;
+
+            }
+            else if(email[i]=='.'){
+                dot=1;
+                loc_dot=i;
+            }
+        }
+        if(at&&dot)
+        {
+            if(loc_at==0 || loc_dot==0)
+            {
+                cmnt=`There must be 1 char before '@' and '.'`;
+                document.getElementById('reslt').innerHTML=cmnt;
+            }
+            else if(loc_at==(loc_dot-1))
+            {
+                cmnt="There must be 1 char after @";
+                document.getElementById('reslt').innerHTML=cmnt;
+            }
+            else if(loc_dot>=email.length-2)
+            {
+                cmnt=`There must be 2 char after '.'`;
+                document.getElementById('reslt').innerHTML=cmnt;
+            }
+            else
+            {
+                cmnt="Success";
+                document.getElementById('reslt').innerHTML=cmnt;
+            }
+        }
+        else
+        cmnt=`Email must contain '@' and '.' `;
+        document.getElementById('reslt').innerHTML=cmnt;
+    }
+</script>
+</html>

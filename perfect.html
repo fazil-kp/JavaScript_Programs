@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfect number</title>
+    <style>
+        body{
+            background-color: antiquewhite;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            overflow: hidden;
+        }
+        input{
+            border-radius: 5px;
+            background-color: black;
+            color: white;
+            padding: 10px;
+        }
+       input[type= text]{
+        left: 2em;
+        display: flex;
+       }
+        h1
+        {
+            color: rgb(98, 110, 68);
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Perfect Number</h1><br><br><br>
+    <center>
+    <div>
+        Enter the number : &nbsp;<input type="text" id="num"/>
+    </div>
+    
+    <br>
+    <input type="button" value="Find" onClick="perfect()"/>
+    </center>
+    <script>
+        function perfect() {
+            var n = document.getElementById("num").value;
+            var s=0;
+            if(n==0 || isNaN(n))
+            {
+                alert("Invalid input")
+            }
+            else{
+
+            for(var i=0;i<n;i++)
+            {
+                if(n%i==0)
+                {
+                    s=s+i;
+                }
+            }
+            if(s==n)
+            {
+                alert(n + " is a Perfect");
+            }
+            else if(s>n)
+            {
+                alert(n + " is a Abundent")
+            }
+            else
+            {
+                alert(n+ " is a Deficient")
+            }
+        }
+    }
+
+    </script>
+</body>
+</html>

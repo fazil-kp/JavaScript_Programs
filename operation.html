@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operation</title>
+    <style>
+        body{
+            background-color: rgb(94, 94, 155);
+            color: aliceblue;
+            text-align: center;
+            font-family: sans-serif;
+        }
+        input{
+            padding: 10px;
+            border: 0px solid white;
+            outline: none;
+            border-radius: 10px;
+        }
+        #result{
+            background-color: white;
+        }
+        .head{
+            font-size:3em;
+            font-weight: bolder;
+            color: rgb(195, 223, 247);
+        }
+        button{
+            background-color: rgb(17, 17, 17);
+            color: aliceblue;
+            padding: 10px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body><br><br>
+    <div class="head">Calculator</div><br><br><br>
+    <div class="container">
+        <div class="item">
+            <input type="text" id="first" placeholder="Enter first name"/>
+            <input type="text" id="second" placeholder="Enter second number"/>
+        </div><br>
+        <input type="text" name="resul" id="result" disabled><br><br>
+        <div class="item">
+            <button name="add" onclick="calc(1)">+</button>
+            <button name="sub" onclick="calc(2)">-</button>
+            <button name="mul" onclick="calc(3)">x</button>
+            <button name="div" onclick="calc(4)">÷</button>
+            <button name="clr" onclick="calc(5)">Clr</button>
+        </div>
+    </div>
+</body>
+<script>
+   function calc(i)
+   {
+    var a =parseInt(document.getElementById("first").value);
+    var b =parseInt( document.getElementById("second").value);
+    var c = 0;
+    switch(i){
+        case 1: c=a+b;
+                document.getElementById("result").value="Result =" + c;
+                break;
+        case 2: c=a-b;
+                document.getElementById("result").value="Result =" + c;
+                break;
+        case 3: c=a*b;
+                document.getElementById("result").value="Result =" + c;
+                break;
+        case 4: c=a/b;
+                document.getElementById("result").value="Result =" +c;
+                break;
+        case 5: c="";
+                document.getElementById("first").value=c;
+                document.getElementById("second").value=c;
+                document.getElementById("result").value=c;
+                break;
+
+    }
+   }
+</script>
+</html>

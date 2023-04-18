@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Captital of a Country </title>
+    <style>
+        body{
+            background-color: #50577A;
+            color: white;
+            font-family: sans-serif;
+            text-align: center;
+        }
+        .head{
+            font-size: 3em;
+            font-family: monospace;
+        }
+        input,select{
+            padding-left: 15px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            padding: 10px;
+            border: 0px solid rgb(0, 0, 0);
+            outline: none;
+            border-radius: 5px;
+            font-size: larger;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="head">Captital of a Country</div><br><br><br><br><br>
+    Country :
+    <select id="country" onchange="capital()">
+        <option value="0">Afghanistan</option>
+        <option value="1">Albania</option>
+        <option value="2">Argentina</option>
+        <option value="3">Australia</option>
+        <option value="4">Canada</option>
+        <option value="5">Egypt</option>
+        <option value="6">France</option>
+        <option value="7">Italy</option>
+        <option value="8" selected>India</option>
+        <option value="9">Japan</option>
+        <option value="10">United Arab Emirates</option>
+        <option value="11">United Kingdom</option>
+        <option value="12">United States</option>
+      </select>&nbsp;&nbsp;&nbsp;Capital :
+      <input type="text" name="result" id="result" disabled value="New Delhi"> 
+      <script>
+      function capital() {
+        var x = document.getElementById("country").value;
+        const Capital = new Array("Kabul", "Tirana (Tirane)", "Buenos Aires","Canberra","Ottawa","Cairo","Paris","Rome","New Delhi","Tokyo","Abu Dhabi","London","Washington D.C.");
+            document.getElementById("result").value =  Capital[x];
+      }
+      </script>
+</body>
+</html>

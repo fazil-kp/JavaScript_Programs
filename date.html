@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <div class="head">1st january Sunday years </div><br><br><br><br><br><br><br>
+    <div class="cntainer">
+        Enter the Year interval : <input type="text" id="result1" value="2000" size="4"/>&nbsp;-&nbsp;
+        <input type="text" id="result2" value="2050" size="4"/><br><br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button onclick="validate()">Submit</button>
+    </div><br>
+    <div id="result"></div>
+    <script>
+        function validate()
+        {
+            var year1 = document.getElementById("result1").value;
+            var year2 = document.getElementById("result2").value;
+            var result = "";
+            for (var year = year1; year <= year2; year++)
+            {
+                var d = new Date(year, 0, 1);
+                if ( d.getDay() === 1 )
+                {
+                    result = result + year + " <br>";
+                }
+            }
+            document.getElementById("result").innerHTML=result;
+        }
+        
+    
+    </script>
+</body>
+</html>
